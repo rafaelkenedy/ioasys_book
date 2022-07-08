@@ -2,7 +2,7 @@
 Início do módulo 3, criação do app ioasys book!
 
 <div align="center">
-  <img src="icon.png" width="150" />
+  <img src="ic.png" width="150" />
   <h1>IOASYS Book</h1>
   <p> Camp IOASYS 2022 Android project</p>
   <p>
