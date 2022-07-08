@@ -1,6 +1,8 @@
 package com.rafael.ioasys_book
 
+import android.content.Intent
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
@@ -16,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
         val enterButton = findViewById<MaterialButton>(R.id.enterButton)
 
         enterButton.setOnClickListener {
-            tvError.visibility = View.VISIBLE
+            val intent = Intent(this, BookListActivity::class.java)
+            startActivity(intent)
         }
 
     }

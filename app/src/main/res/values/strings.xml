@@ -5,4 +5,5 @@
     <string name="entrar">Entrar</string>
     <string name="email_e_ou_senha_incorretos">Email e/ou senha incorretos.</string>
     <string name="books">Books</string>
+    <string name="pesquisar">Pesquisar</string>
 </resources>

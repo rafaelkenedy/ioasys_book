@@ -7,6 +7,7 @@
         <item name="android:layout_marginHorizontal">@dimen/default_margin</item>
         <item name="android:layout_marginTop">80dp</item>
         <item name="android:background">@color/black_traslucent</item>
+        app:hintTextColor="@color/white"
         <item name="android:textColorHint">@color/white</item>
     </style>
 

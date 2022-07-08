@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable-hdpi/logo.xml" value="0.1155" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/bg_gray_with_corner.xml" value="0.1415" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/bg_input.xml" value="0.1425" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/layout/activity_book_list.xml" value="0.25" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/layout/custom_search_input.xml" value="0.25" />
       </map>
     </option>
   </component>
