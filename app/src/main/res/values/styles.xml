@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="input_login_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">80dp</item>
+        <item name="android:background">@color/black_traslucent</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+    <style name="input_pass_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/default_margin</item>
+        <item name="android:layout_marginTop">@dimen/default_margin</item>
+        <item name="android:background">@color/black_traslucent</item>
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+</resources>
