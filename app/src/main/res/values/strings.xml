@@ -6,4 +6,9 @@
     <string name="email_e_ou_senha_incorretos">Email e/ou senha incorretos.</string>
     <string name="books">Books</string>
     <string name="pesquisar">Pesquisar</string>
+    <string name="book_title_sample">Crossin the Chase</string>
+    <string name="book_date_sample">Publicado em 2020</string>
+    <string name="editora_sample">Editora Loyola</string>
+    <string name="qtd_paginas_sample">150 páginas</string>
+    <string name="book_author_sample">Geoffrey A. Moore</string>
 </resources>

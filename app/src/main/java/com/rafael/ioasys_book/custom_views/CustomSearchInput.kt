@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.core.widget.addTextChangedListener
 import com.google.android.material.textfield.TextInputEditText
 import com.rafael.ioasys_book.R
 
@@ -15,11 +17,49 @@ class CustomSearchInput @JvmOverloads constructor(
 
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private val view = LayoutInflater.from(context).inflate(R.layout.custom_search_input, this, true)
+    private val view =
+        LayoutInflater.from(context).inflate(R.layout.custom_search_input, this, true)
 
     private val input: TextInputEditText by lazy {
         view.findViewById(R.id.etSearch)
     }
 
+    var textChangeListener: (input: String) -> Unit = {}
+
+    init {
+        setLayout(attrs)
+        configureInputSearch()
+    }
+
+    private fun setLayout(attrs: AttributeSet?) {
+        attrs?.let { atributesSet ->
+
+            val attributes =
+                context.obtainStyledAttributes(atributesSet, R.styleable.CustomSearchInput)
+            val customHint = attributes.getString(R.styleable.CustomSearchInput_custom_hint)
+
+            input.hint = customHint
+
+            attributes.recycle()
+        }
+    }
+
+    private fun configureInputSearch() {
+        input.addTextChangedListener { input ->
+            configureInputBackground(input.isNullOrEmpty())
+            textChangeListener.invoke(input.toString())
+
+        }
+    }
+
+    private fun configureInputBackground(empty: Boolean) {
+        if (empty) {
+            input.backgroundTintList = null
+
+        } else {
+            input.backgroundTintList =
+                ContextCompat.getColorStateList(context, android.R.color.white)
+        }
+    }
 }
 
