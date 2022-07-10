@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_book_list"
-    tools:context=".fragments.BookListFragment">
+    tools:context=".presentation.ui.fragments.BookListFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvLabel"
@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvLabel" />
 
-    <com.rafael.ioasys_book.custom_views.CustomSearchInput
+    <com.rafael.ioasys_book.presentation.ui.custom_views.CustomSearchInput
         android:id="@+id/edSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

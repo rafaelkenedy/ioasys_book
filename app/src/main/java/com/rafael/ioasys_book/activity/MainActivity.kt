@@ -1,4 +1,4 @@
-package com.rafael.ioasys_book
+package com.rafael.ioasys_book.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

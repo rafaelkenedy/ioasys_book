@@ -1,4 +1,4 @@
-package com.rafael.ioasys_book.fragments
+package com.rafael.ioasys_book.presentation.ui.fragments
 
 import android.os.Bundle
 import android.text.SpannableString
@@ -11,7 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.rafael.ioasys_book.R
 import com.rafael.ioasys_book.databinding.FragmentBookDetailsBinding
-import com.rafael.ioasys_book.model.Book
+import com.rafael.ioasys_book.domain.model.Book
 
 
 class BookDetailsFragment : BottomSheetDialogFragment() {

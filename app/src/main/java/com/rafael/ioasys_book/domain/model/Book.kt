@@ -1,4 +1,4 @@
-package com.rafael.ioasys_book.model
+package com.rafael.ioasys_book.domain.model
 
 data class Book(
     val id: Int,
