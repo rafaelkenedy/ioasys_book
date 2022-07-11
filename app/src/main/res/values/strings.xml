@@ -17,4 +17,5 @@
     <string name="idioma">English</string>
     <string name="isbn_13">AD134F34AD224</string>
     <string name="isbn_10">ADSEFDR098</string>
+    <string name="error_search_book">Não encontramos nenhum \nlivro com esse termo!</string>
 </resources>

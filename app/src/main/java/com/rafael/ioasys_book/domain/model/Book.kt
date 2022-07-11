@@ -34,9 +34,10 @@ data class Book(
             )
         )
 
-        fun getMockListCount(count: Int): List<Book> {
+        fun getMockListCount(): List<Book> {
+
             val mocklist = mutableListOf<Book>()
-            for (i in 1..count) {
+            for (i in 1..10) {
                 mocklist.add(
                     Book(
                         id = i,

@@ -4,6 +4,7 @@
     package="com.rafael.ioasys_book">
 
     <application
+        android:name=".activity.MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

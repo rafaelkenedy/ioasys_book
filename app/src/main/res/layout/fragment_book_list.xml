@@ -63,5 +63,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edSearch"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmptyList"
+        style="@style/ListEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_search_book"
+        android:visibility="gone"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="@+id/rvBooks"
+        app:layout_constraintStart_toStartOf="@+id/rvBooks"
+        app:layout_constraintTop_toTopOf="@+id/rvBooks"
+        tools:visibility="visible" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

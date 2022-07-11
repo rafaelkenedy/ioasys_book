@@ -15,6 +15,7 @@
         android:drawablePadding="@dimen/default_padding"
         android:hint="@string/pesquisar"
         android:padding="@dimen/padding12dp"
+        android:inputType="textFilter"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
