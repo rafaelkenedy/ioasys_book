@@ -6,18 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rafael.ioasys_book.databinding.FragmentLoginBinding
 import com.rafael.ioasys_book.presentation.viewmodel.LoginViewModel
 import com.rafael.ioasys_book.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment() {
 
     //Boa prática para evitar memory leak
     private var _binding: FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
-    private val viewModel: LoginViewModel by viewModels()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
     private fun setListener() {
         binding.enterButton.setOnClickListener {
             binding.run {
-                viewModel.login(
+                loginViewModel.login(
                     textFieldEditEmail.text.toString(),
                     textFieldEditPass.text.toString()
                 )
@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun addObserver() {
-        viewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
+        loginViewModel.loggedUserViewState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Success -> {
                     findNavController().navigate(
@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroy()
-        viewModel.resetViewState()
+        loginViewModel.resetViewState()
         _binding = null
     }
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.rafael.ioasys_book.databinding.FragmentBookListBinding
 import com.rafael.ioasys_book.domain.exception.EmptyBookListException
 import com.rafael.ioasys_book.domain.model.Book
@@ -13,13 +12,14 @@ import com.rafael.ioasys_book.presentation.adapter.BookClickListener
 import com.rafael.ioasys_book.presentation.adapter.BookListAdapter
 import com.rafael.ioasys_book.presentation.viewmodel.BookListViewModel
 import com.rafael.ioasys_book.util.ViewState
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookListFragment : Fragment(), BookClickListener {
 
     private lateinit var bookListAdapter: BookListAdapter
     private var _binding: FragmentBookListBinding? = null
     private val binding: FragmentBookListBinding get() = _binding!!
-    private val viewModel: BookListViewModel by viewModels()
+    private val bookListViewModel: BookListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +39,7 @@ class BookListFragment : Fragment(), BookClickListener {
 
     private fun configureListeners() {
         binding.edSearch.textChangeListener = { input ->
-            viewModel.search(input)
+            bookListViewModel.search(input)
         }
 
     }
@@ -47,7 +47,7 @@ class BookListFragment : Fragment(), BookClickListener {
     private fun setBookListData() {
         bookListAdapter = BookListAdapter(this)
         binding.rvBooks.adapter = bookListAdapter
-        viewModel.search()
+        bookListViewModel.search()
 
     }
 
@@ -56,7 +56,7 @@ class BookListFragment : Fragment(), BookClickListener {
     }
 
     private fun addObserver() {
-        viewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
+        bookListViewModel.bookListViewState.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is ViewState.Success -> {
                     showEmptyListError(false)
