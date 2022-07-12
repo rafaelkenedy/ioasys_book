@@ -4,6 +4,7 @@ data class User(
     val name: String,
     val birthDate: String,
     val gender: String,
+    val id: String,
     val accessToken: String
 )
 
