@@ -6,6 +6,7 @@ import android.text.style.ImageSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -51,20 +52,21 @@ class BookDetailsFragment : BottomSheetDialogFragment() {
     private fun setupView() {
         binding.apply {
 
-            tvBookName.text = book?.name
-            tvBookAuthor.text = book?.author
+            tvBookTitle.text = book?.title
+            tvBookAuthor.text = book?.authors
             tvBookPages.text = book?.pages
-            tvBookEditor.text = book?.pages
-            tvBookDate.text = book?.date
+            tvBookPublisher.text = book?.publisher
+            tvBookDate.text = book?.published
             tvBookLanguage.text = book?.language
             tvBookOriginName.text = book?.originName
-            tvBookISBN10.text = book?.isbn10
-            tvBookISBN13.text = book?.isbn13
-
+            tvBookIsbn10.text = book?.isbn10
+            tvBookIsbn13.text = book?.isbn13
+            imgBigBook.load(book?.imageUrl) {
+                error(R.drawable.img_book_1)
+            }
             val spannableString = SpannableString("   ${book?.review}")
             val imageSpan = ImageSpan(requireContext(), R.drawable.ic_quotes)
             spannableString.setSpan(imageSpan, 0, 1, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
-
             tvReview.text = spannableString
         }
     }

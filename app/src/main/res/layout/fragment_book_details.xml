@@ -34,22 +34,20 @@
                 android:id="@+id/img_big_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img_book_2"
-                tools:src="@drawable/img_book_2" />
+                tools:src="@drawable/img_book_1" />
 
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_book_name"
+            android:id="@+id/tv_book_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="40dp"
             android:ellipsize="end"
-
             android:lineSpacingMultiplier="1.43"
             android:maxLines="2"
-            android:textColor="@color/gray_translucent"
+            android:textColor="@android:color/darker_gray"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="@id/guide_line_end"
             app:layout_constraintStart_toStartOf="@id/guide_line_start"
@@ -61,18 +59,18 @@
             style="@style/Book_Subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/tv_book_name"
+            app:layout_constraintEnd_toEndOf="@id/tv_book_title"
             app:layout_constraintStart_toStartOf="@id/guide_line_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_book_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_title"
             tools:text="Tim Brown, Julie Zhuo, Fried Maximilian" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_info_label"
-            style="@style/Book_Description"
+            style="@style/Book_Info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/editora_sample"
+            android:text="@string/book_date_sample"
             android:textAllCaps="true"
             app:layout_constraintStart_toStartOf="@id/guide_line_start"
             app:layout_constraintTop_toBottomOf="@id/tv_book_author" />
@@ -91,50 +89,50 @@
             app:layout_constraintTop_toBottomOf="@id/tv_info_label">
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_book_pages"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/qtd_paginas_sample" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
-                android:id="@+id/tv_book_editor"
+                android:id="@+id/tv_book_publisher"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/editora_sample" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_book_date"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/editora_sample" />
+                android:text="@string/book_date_sample" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_book_language"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/idioma" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_book_origin_name"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/book_title_sample" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
-                android:id="@+id/tv_book_ISBN10"
+                android:id="@+id/tv_book_isbn10"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isbn_10" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
-                android:id="@+id/tv_book_ISBN13"
+                android:id="@+id/tv_book_isbn13"
+                style="@style/Book_Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/isbn_13" />
@@ -155,50 +153,50 @@
             app:layout_constraintTop_toBottomOf="@id/tv_info_label">
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_pages"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="304 páginas" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_editor"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Editora Loyola" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_date"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="2020" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_language"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Inglês" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_origin_book_name"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Change By Design" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_isbn10"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="0062856626" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                style="@style/Book_Description"
                 android:id="@+id/tv_info_isbn13"
+                style="@style/Book_Description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="978-0062856623" />
@@ -207,19 +205,18 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_review_title"
-            style="@style/Book_Description"
+            style="@style/Book_Info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/editora_sample"
             android:textAllCaps="true"
             app:layout_constraintEnd_toEndOf="@id/guide_line_end"
             app:layout_constraintStart_toStartOf="@id/guide_line_start"
             app:layout_constraintTop_toBottomOf="@id/labels_container" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            style="@style/Book_Description"
             android:id="@+id/tv_review"
+            style="@style/Book_Description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -228,7 +225,7 @@
             app:layout_constraintEnd_toEndOf="@id/guide_line_end"
             app:layout_constraintStart_toStartOf="@id/guide_line_start"
             app:layout_constraintTop_toBottomOf="@id/tv_review_title"
-            tools:text="The subject of “design thinking” is the rage at business schools, throughout corporations, and increasingly in the popular press—due in large part to the work of IDEO, a leading design firm, and its celebrated CEO, Tim Brown, who uses this book to show how the techniques and strategies of design belong at every level." />
+            tools:text="@string/review_sample" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guide_line_start"

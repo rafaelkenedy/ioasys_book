@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.rafael.ioasys_book.R
 import com.rafael.ioasys_book.databinding.BookItemBinding
 import com.rafael.ioasys_book.domain.model.Book
 
@@ -30,15 +32,19 @@ class BookListAdapter(
 
         fun bind(book: Book) {
             binding.apply {
-                tvBookTitle.text = book.name
-                tvBookAuthor.text = book.author
+                tvBookTitle.text = book.title
+                tvBookAuthor.text = book.authors
                 tvPages.text = book.pages
-                tvBookEditor.text = book.editor
-                tvBookDate.text = book.date
+                tvBookEditor.text = book.publisher
+                tvBookDate.text = book.published
+                imgBook.load(book.imageUrl) {
+                    error(R.drawable.img_book_1)
+                }
 
                 root.setOnClickListener {
                     onBookClickListener.onBookClickListener(book)
                 }
+
 
             }
 

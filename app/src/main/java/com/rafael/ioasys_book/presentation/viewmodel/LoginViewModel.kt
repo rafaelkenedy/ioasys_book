@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rafael.ioasys_book.domain.model.User
 import com.rafael.ioasys_book.domain.repositories.LoginRepository
 import com.rafael.ioasys_book.util.*
 import kotlinx.coroutines.delay
@@ -13,8 +14,8 @@ class LoginViewModel(
     private val loginRepository: LoginRepository
 ) : ViewModel() {
 
-    private val _loggedUserViewState = MutableLiveData<ViewState<Boolean>>()
-    val loggedUserViewState = _loggedUserViewState as LiveData<ViewState<Boolean>>
+    private val _loggedUserViewState = MutableLiveData<ViewState<String>>()
+    val loggedUserViewState = _loggedUserViewState as LiveData<ViewState<String>>
 
     fun login(email: String, password: String) {
 
@@ -28,7 +29,7 @@ class LoginViewModel(
                 loginRepository.login(email, password).collect { user ->
                     user.apply {
                         if (name.isNotEmpty() && password.isNotEmpty()) {
-                            _loggedUserViewState.postSuccess(true)
+                            _loggedUserViewState.postSuccess(user.accessToken)
                         } else {
                             _loggedUserViewState.postError(Exception(""))
                         }
