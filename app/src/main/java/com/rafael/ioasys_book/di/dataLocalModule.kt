@@ -11,5 +11,5 @@ import org.koin.dsl.module
 val dataLocalModule = module {
     single { SharedPreferencesHelper(androidContext()) }
     single<LoginLocalDatasource> { LoginLocalDatasourceImpl(get()) }
-    single<BooksLocalDataSource> { BooksLocalDatasourceImpl(get()) }
+    single<BooksLocalDataSource> { BooksLocalDatasourceImpl(get(), get()) }
 }

@@ -10,7 +10,9 @@ import com.rafael.ioasys_book.util.ViewState
 import com.rafael.ioasys_book.util.postError
 import com.rafael.ioasys_book.util.postLoading
 import com.rafael.ioasys_book.util.postSuccess
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class BookListViewModel(
     private val booksRepository: BooksRepository
@@ -26,16 +28,33 @@ class BookListViewModel(
         viewModelScope.launch {
             _bookListViewState.postLoading()
             try {
-                booksRepository.getBooks(input).collect { books ->
-                    if (books.isNotEmpty()) {
-                        _bookListViewState.postSuccess(books)
-                    } else {
-                        _bookListViewState.postError(Exception())
+                withContext(Dispatchers.IO) {
+                    booksRepository.getBooks(input).collect { books ->
+                        withContext(Dispatchers.Main) {
+                            if (books.isNotEmpty()) {
+                                saveBooks(bookList = books)
+                                _bookListViewState.postSuccess(books)
+                            } else {
+                                _bookListViewState.postError(Exception())
+                            }
+                        }
                     }
                 }
 
             } catch (err: Exception) {
-                _bookListViewState.postError(Exception(err))
+                withContext(Dispatchers.Main) { _bookListViewState.postError(Exception(err)) }
+            }
+        }
+    }
+
+    private fun saveBooks(bookList: List<Book>) {
+        viewModelScope.launch {
+            try {
+                withContext(Dispatchers.IO) {
+                    booksRepository.saveBooks(bookList)
+                }
+            } catch (err: Exception) {
+                return@launch
             }
         }
     }
