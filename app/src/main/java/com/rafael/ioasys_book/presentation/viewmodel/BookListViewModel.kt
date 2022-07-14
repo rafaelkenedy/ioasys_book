@@ -21,12 +21,12 @@ class BookListViewModel(
 
     //private val bookDataList: List<Book> by lazy { Book.getMockListCount() }
 
-    fun search(input: String = "", accessToken: String) {
+    fun search(input: String = "") {
 
         viewModelScope.launch {
             _bookListViewState.postLoading()
             try {
-                booksRepository.getBooks(accessToken, input).collect { books ->
+                booksRepository.getBooks(input).collect { books ->
                     if (books.isNotEmpty()) {
                         _bookListViewState.postSuccess(books)
                     } else {
