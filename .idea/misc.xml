@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable-hdpi/logo.xml" value="0.1155" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/bg_gray_with_corner.xml" value="0.1415" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/bg_input.xml" value="0.1425" />
+        <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/ic_log_out.xml" value="0.121" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/drawable/my_riple.xml" value="0.1" />
         <entry key="..\:/Cursos/Android Basics/ioasys_book/app/src/main/res/layout/activity_book_list.xml" value="0.33" />
