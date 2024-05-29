@@ -1,5 +1,5 @@
 # ioasys_book
-Início do módulo 3, criação do app ioasys book!
+App ioasys book!
 
 <div align="center">
   <img src="ic.png" width="150" />
