@@ -24,7 +24,16 @@ App ioasys book!
 
 # Technologies
 
-  - Kotlin  
+  - Kotlin
+  - AndroidX
+  - Koin
+  - Coroutines
+  - Retrofit
+  - OkHttp
+  - Coil
+  - Room
+  - Junit
+  - Espresso
   
 
 ### Requirements
